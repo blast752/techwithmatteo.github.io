@@ -1,44 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head> 
-    <style>
-        body {background-color: #170A1C;}
-        h1   {color: #228cdb;}
-        h2   {color: #0B7189;}
-        p    {color: #9c95dc;}
-        li    {color: #C19AB7;}
+    <head>
+        <style>
+            body {background-color: #170A1C;}
+            h1   {color: #228cdb;}
+            h2   {color: #0B7189;}
+            p    {color: #9c95dc;}
+            li    {color: #C19AB7;}
         </style>
     <!--link rel="stylesheet" type="text/css" href="style.css"-->
-</head>
-<body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <title>Your Material Design Blog Title</title>
+    <!-- Material Design CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="blue darken-3">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Your Blog Title</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul class="sidenav" id="mobile-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
     <main>
-      <section>
-        <h2>Nuovo sito raga</h2>
-        <img src="featured-image.jpg" alt="Featured Image">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada, nisi eu consequat dignissim, ligula tellus tempor nunc, eget lobortis augue odio a urna.</p>
-        <a href="#">Read More</a>
-      </section>
-      <section>
-        <h2>Recent Articles</h2>
-        <ul>
-          <li><a href="#">Article Title 1</a></li>
-          <li><a href="#">Article Title 2</a></li>
-          <li><a href="#">Article Title 3</a></li>
-          <li><a href="#">Article Title 4</a></li>
-        </ul>
-      </section>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="featured-image.jpg">
+                            <span class="card-title">Featured Article Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada, nisi eu consequat dignissim, ligula tellus tempor nunc, eget lobortis augue odio a urna.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <ul class="collection with-header">
+                        <li class="collection-header"><h4>Recent Articles</h4></li>
+                        <li class="collection-item"><a href="#">Article Title 1</a></li>
+                        <li class="collection-item"><a href="#">Article Title 2</a></li>
+                        <li class="collection-item"><a href="#">Article Title 3</a></li>
+                        <li class="collection-item"><a href="#">Article Title 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </main>
-    <footer>
-      <p>&copy; Tech with Matteo</p>
+    <footer class="page-footer blue darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">Your Blog Title</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="col s12 m4 offset-m2">
+                    <h5 class="white-text">Connect With Us</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#">Facebook</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
-  </body>
+    <!-- Material Design JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
 </html>
+
