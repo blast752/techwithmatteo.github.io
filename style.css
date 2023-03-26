@@ -1,14 +1,11 @@
-/* theme.css */
-
-/* Define new colors */
---primary-color: #170A1C;
---accent-color: #228CDB;
-
-/* Override default MDL colors */
-.mdl-color-primary {
-  background-color: var(--primary-color);
-}
-.mdl-color-accent {
-  background-color: var(--accent-color);
-}
-
+:root {
+	--mdc-theme-primary: #2196F3;
+	--mdc-theme-secondary: #FFC107;
+	--mdc-theme-background: #fff;
+	--mdc-theme-surface: #fff;
+	--mdc-theme-on-primary: #fff;
+	--mdc-theme-on-secondary: #000;
+	--mdc-theme-on-background: #000;
+	--mdc-theme-on-surface: #000;
+  }
+  
