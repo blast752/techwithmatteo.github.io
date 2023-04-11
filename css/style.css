@@ -5,7 +5,7 @@ body {
 
 /* Navigation bar styles */
 nav {
-  background-color: #2196f3;
+  background-color: #228CDB;
 }
 
 nav ul li a {
@@ -16,12 +16,12 @@ nav ul li a {
 /* Card styles */
 .card {
   border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 5px #170A1C;
 }
 
 .card .card-title {
   padding: 10px;
-  background-color: #2196f3;
+  background-color: #228CDB;
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -36,13 +36,13 @@ nav ul li a {
 }
 
 .card .card-action a {
-  color: #2196f3;
+  color: #228CDB;
   font-size: 16px;
 }
 
 /* Footer styles */
 .page-footer {
-  background-color: #2196f3;
+  background-color: #228CDB;
   color: white;
   padding: 20px;
 }
