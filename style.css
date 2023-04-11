@@ -1,11 +1,65 @@
-:root {
-	--mdc-theme-primary: #2196F3;
-	--mdc-theme-secondary: #FFC107;
-	--mdc-theme-background: #fff;
-	--mdc-theme-surface: #fff;
-	--mdc-theme-on-primary: #fff;
-	--mdc-theme-on-secondary: #000;
-	--mdc-theme-on-background: #000;
-	--mdc-theme-on-surface: #000;
-  }
-  
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #f2f2f2;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo img {
+	height: 50px;
+	margin-right: 10px;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+}
+
+nav li {
+	margin-right: 20px;
+}
+
+nav a {
+	color: #333;
+	text-decoration: none;
+}
+
+main {
+	padding: 20px;
+}
+
+article {
+	margin-bottom: 50px;
+}
+
+article h2 {
+	margin-top: 0;
+}
+
+article img {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+article p {
+	line-height: 1.5;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
