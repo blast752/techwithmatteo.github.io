@@ -1,43 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My Blog</title>
-	<link rel="stylesheet" href="css/style.css">
+  <title>My Material Design Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="css\style.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-	<header>
-		<div class="gradient"></div>
-		<div class="logo">
-			<img src="logo.png" alt="My Blog Logo">
-			<h1>My Blog</h1>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">My Blog</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://materializecss.com/images/sample-1.jpg">
+            <span class="card-title">Card Title</span>
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Read More</a>      </div>
 		</div>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<article>
-			<header>
-				<h2>My First Blog Post</h2>
-				<p>Written by Jane Doe on April 11, 2023</p>
-			</header>
-			<img src="blog-post-image.jpg" alt="Blog Post Image">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet velit vel est fringilla, at euismod metus consectetur. Sed iaculis, ipsum eget consectetur laoreet, justo nisl lacinia mauris, eu facilisis velit velit ut sapien. Nam fringilla tristique enim, vel elementum mi consequat vel.</p>
-			<p>Nam id metus luctus, mattis felis vel, posuere quam. Vivamus quis rutrum nibh. Fusce euismod tellus lacus, eget maximus leo convallis sit amet. Sed eget interdum ipsum. Ut vel dictum est, eu luctus orci.</p>
-			<footer>
-				<p>Tags: <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
-			</footer>
-		</article>
-	</main>
-	<footer>
-		<p>&copy; 2023 My Blog. All rights reserved.</p>
-	</footer>
+	  </div>
+	  <div class="col s12 m6">
+		<div class="card">
+		  <div class="card-image">
+			<img src="https://materializecss.com/images/sample-1.jpg">
+			<span class="card-title">Card Title</span>
+		  </div>
+		  <div class="card-content">
+			<p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+		  </div>
+		  <div class="card-action">
+			<a href="#">Read More</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<footer class="page-footer">
+  <div class="container">
+	<div class="row">
+	  <div class="col l6 s12">
+		<h5 class="white-text">Footer Content</h5>
+		<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+	  </div>
+	  <div class="col l4 offset-l2 s12">
+		<h5 class="white-text">Links</h5>
+		<ul>
+		  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+		  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+		  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+		  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+		</ul>
+	  </div>
+	</div>
+  </div>
+</footer>
 </body>
 </html>
 
+         

@@ -1,42 +1,70 @@
-@keyframes rotate {
-	0% {
-	  transform: rotate(0deg);
-	}
-	100% {
-	  transform: rotate(360deg);
-	}
+/* Global styles */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Navigation bar styles */
+nav {
+  background-color: #2196f3;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 16px;
+}
+
+/* Card styles */
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-title {
+  padding: 10px;
+  background-color: #2196f3;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card .card-content {
+  padding: 10px;
+}
+
+.card .card-content p {
+  font-size: 16px;
+}
+
+.card .card-action a {
+  color: #2196f3;
+  font-size: 16px;
+}
+
+/* Footer styles */
+.page-footer {
+  background-color: #2196f3;
+  color: white;
+  padding: 20px;
+}
+
+.page-footer h5 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.page-footer p {
+  font-size: 16px;
+}
+
+.page-footer ul li a {
+  color: white;
+  font-size: 16px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  .card {
+    margin-bottom: 20px;
   }
-  
-  .gradient {
-	--size: 250px;
-	--speed: 50s;
-	--easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
-  
-	width: var(--size);
-	height: var(--size);
-	filter: blur(calc(var(--size) / 5));
-	background-image: linear-gradient(hsl(158, 82, 57, 85%), hsl(252, 82, 57));
-	animation: rotate var(--speed) var(--easing) alternate infinite;
-	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  
-  @media (min-width: 720px) {
-	.gradient {
-	  --size: 500px;
-	}
-  }
-  
-  body {
-	background-color: #222;
-	position: absolute;
-	inset: 0;
-	display: flex;
-	place-content: center;
-	align-items: center;
-	overflow: hidden;
-  }
-  
-  /* This is just to transition when you change the viewport size. */
-  * {
-	transition: all 0.25s ease-out;
-  }
+}
