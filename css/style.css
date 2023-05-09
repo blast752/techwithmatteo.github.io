@@ -1,70 +1,56 @@
-/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Helvetica', sans-serif;
+  background: #333; 
+  color: #fff; 
 }
 
-/* Navigation bar styles */
-nav {
-  background-color: #228CDB;
+.wrapper {
+  max-width: 960px; 
+  margin: 0 auto;
+  padding: 2rem; 
 }
 
-nav ul li a {
-  color: white;
-  font-size: 16px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* Card styles */
-.card {
-  border-radius: 5px;
-  box-shadow: 0px 2px 5px #170A1C;
+header {
+  text-align: center; 
 }
 
-.card .card-title {
-  padding: 10px;
-  background-color: #228CDB;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
+header img {
+  width: 150px;
+  border-radius: 50%; 
 }
 
-.card .card-content {
-  padding: 10px;
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem; 
 }
 
-.card .card-content p {
-  font-size: 16px;
+.project {
+  background: #444;
+  padding: 1rem; 
 }
 
-.card .card-action a {
-  color: #228CDB;
-  font-size: 16px;
+.project h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;  
 }
 
-/* Footer styles */
-.page-footer {
-  background-color: #228CDB;
-  color: white;
-  padding: 20px;
+footer {
+  text-align: center; 
+  background: #111;
+  padding: 1rem 0; 
 }
 
-.page-footer h5 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.page-footer p {
-  font-size: 16px;
-}
-
-.page-footer ul li a {
-  color: white;
-  font-size: 16px;
-}
-
-/* Responsive styles */
-@media only screen and (max-width: 600px) {
-  .card {
-    margin-bottom: 20px;
-  }
+footer img {
+  margin: 0 0.5rem;
+  width: 30px;
 }
