@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Material Design 3 Website</title>
+    <title>Material Design 3 Homepage</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #6200ee;
@@ -17,7 +19,12 @@
             --on-surface: #000000;
             --border-radius: 4px;
             --elevation-1: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.20);
-            --elevation-2: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.20);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -28,58 +35,143 @@
             padding: 0;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: var(--on-primary);
-            padding: 1rem;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 1rem;
         }
 
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: var(--on-primary);
+            padding: 1rem;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin-left: 1rem;
+        }
+
+        /* Hero */
+        .hero {
+            background-color: var(--surface-color);
+            color: var(--on-surface);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 2rem 0;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
         .card {
             background-color: var(--surface-color);
             color: var(--on-surface);
             border-radius: var(--border-radius);
-            box-shadow: var(--elevation-1);
             padding: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        button {
-            background-color: var(--secondary-color);
-            color: var(--on-secondary);
-            border: none;
-            border-radius: var(--border-radius);
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            cursor: pointer;
             box-shadow: var(--elevation-1);
             transition: box-shadow 0.3s;
         }
 
-        button:hover {
-            box-shadow: var(--elevation-2);
+        .card:hover {
+            box-shadow: var(--elevation-1), 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--surface-color);
+            color: var(--on-surface);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
         }
     </style>
 </head>
 <body>
-    <header>
+    <nav>
         <div class="container">
-            <h1>Colorful Material Design 3 Website</h1>
+            <h1>My Website</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
     <main>
-        <div class="container">
-            <div class="card">
-                <h2>Welcome!</h2>
-                <p>This is a simple, colorful Material Design 3 website using HTML and CSS.</p>
-                <button>Click me</button>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to My Material Design 3 Homepage</h2>
+                <p>Discover our amazing services and get to know our team.</p>
             </div>
-        </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-heading">Our Services</h2>
+                <div class="section-grid">
+                    <div class="card">
+                        <h3>Service 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laborum.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Service 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laborum.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Service 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laborum.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Service 4</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laborum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-heading">About Us</h2>
+                <div class="card">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cum suscipit, libero fugiat non ad facilis! Deleniti numquam aliquam quia sequi repellendus, consectetur expedita quos esse unde, accusantium atque?</p>
+                </div>
+            </div>
+        </section>
     </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 My Website. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
