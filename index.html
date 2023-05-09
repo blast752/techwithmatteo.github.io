@@ -41,18 +41,18 @@
             padding: 1rem;
         }
 
+        /* Header */
+        .header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+
         /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: var(--primary-color);
             color: var(--on-primary);
-            padding: 1rem;
-        }
-
-        nav h1 {
-            font-size: 1.5rem;
         }
 
         nav ul {
@@ -63,6 +63,13 @@
 
         nav li {
             margin-left: 1rem;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            text-align: center;
+            color: var(--on-primary);
+            margin-bottom: 1rem;
         }
 
         /* Hero */
@@ -118,59 +125,49 @@
     </style>
 </head>
 <body>
-    <nav>
+    <header class="header">
         <div class="container">
-            <h1>My Website</h1>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <h1 class="title">My Website</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
     <main>
         <section class="hero">
             <div class="container">
                 <h2>Welcome to My Material Design 3 Homepage</h2>
                 <p>Discover our amazing services and get to know our team.</p>
             </div>
-        </section>
+               </section>
         <section class="section">
             <div class="container">
-                <h2 class="section-heading">Our Services</h2>
+                <h3 class="section-heading">Our Services</h3>
                 <div class="section-grid">
                     <div class="card">
-                        <h3>Service 1</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laborum.</p>
+                        <h4>Service 1</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ullam.</p>
                     </div>
                     <div class="card">
-                        <h3>Service 2</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laborum.</p>
+                        <h4>Service 2</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ullam.</p>
                     </div>
                     <div class="card">
-                        <h3>Service 3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laborum.</p>
+                        <h4>Service 3</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ullam.</p>
                     </div>
-                    <div class="card">
-                        <h3>Service 4</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laborum.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <h2 class="section-heading">About Us</h2>
-                <div class="card">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cum suscipit, libero fugiat non ad facilis! Deleniti numquam aliquam quia sequi repellendus, consectetur expedita quos esse unde, accusantium atque?</p>
                 </div>
             </div>
         </section>
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2023 My Website. All Rights Reserved.</p>
+            &copy; 2023 My Website. All Rights Reserved.
         </div>
     </footer>
 </body>
