@@ -1,35 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Material Design 3 Website</title>
+    <style>
+        :root {
+            --primary-color: #6200ee;
+            --secondary-color: #03dac6;
+            --background-color: #f5f5f5;
+            --text-color: #202124;
+            --surface-color: #ffffff;
+            --on-primary: #ffffff;
+            --on-secondary: #000000;
+            --on-background: #000000;
+            --on-surface: #000000;
+            --border-radius: 4px;
+            --elevation-1: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+            --elevation-2: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.20);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--on-primary);
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            color: var(--on-surface);
+            border-radius: var(--border-radius);
+            box-shadow: var(--elevation-1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: var(--on-secondary);
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: var(--elevation-1);
+            transition: box-shadow 0.3s;
+        }
+
+        button:hover {
+            box-shadow: var(--elevation-2);
+        }
+    </style>
 </head>
 <body>
-  <div class="wrapper">
     <header>
-      <img src="profile.jpg" alt="Profile Picture">
-      <h1>John Doe</h1>
-      <p>Web Developer</p>
+        <div class="container">
+            <h1>Colorful Material Design 3 Website</h1>
+        </div>
     </header>
-    <div class="content">
-      <div class="project">
-        <img src="project1.png" alt="Project 1">
-        <h2>Ecommerce Website</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="project">
-        <img src="project2.png" alt="Project 2">
-        <h2>Marketing Site Redesign</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>     
-      </div>
-    </div>
-    <footer>
-      <p>Let's connect!</p>
-      <img src="twitter.svg" alt="Twitter">  
-      <img src="linkedin.svg" alt="LinkedIn">
-    </footer>
-  </div> 
+    <main>
+        <div class="container">
+            <div class="card">
+                <h2>Welcome!</h2>
+                <p>This is a simple, colorful Material Design 3 website using HTML and CSS.</p>
+                <button>Click me</button>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
