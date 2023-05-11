@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <!-- Material Design 3 files -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root {
+        --primary-color: #6200ee;
+        --secondary-color: #03dac6;
+        --background-color: #f5f5f5;
+        --text-color: #202124;
+        --surface-color: #ffffff;
+        --on-primary: #ffffff;
+        --on-secondary: #000000;
+        --on-background: #000000;
+        --on-surface: #000000;
+        --border-radius: 4px;
+        --elevation-1: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    /* Header */
+    .header {
+        background-color: var(--primary-color);
+        padding: 1rem 0;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--on-primary);
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+    }
+
+    nav li {
+        margin-left: 1rem;
+    }
+
+    nav a {
+        color: var(--on-primary);
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: var(--border-radius);
+        transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .title {
+        font-size: 1.5rem;
+        text-align: center;
+        color: var(--on-primary);
+        margin-bottom: 1rem;
+    }
+
+    /* Hero */
+    .hero {
+        background-color: var(--surface-color);
+        color: var(--on-surface);
+        padding: 4rem 0;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Content Sections */
+    .section {
+        padding: 2rem 0;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .card {
+        background-color: var(--surface-color);
+        color: var(--on-surface);
+        border-radius: var(--border-radius);
+        padding: 1rem;
+        box-shadow: var(--elevation-1);
+        transition: box-shadow 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: var(--elevation-1), 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--surface-color);
+        color: var(--on-surface);
+        padding: 1rem;
+        text-align: center;
+        font-size: 0.875rem;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Test Portfolio site</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h3 class="section-heading">My Projects</h3>
+                <div id="github-projects" class="section-grid">
+                    <!-- The projects will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            &copy; 2023 My Website. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+    const username = 'blast752'; // Replace with your GitHub username
+	const url = `https://api.github.com/users/${username}/repos`;
+
+	fetch(url)
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+			return response.json();
+		})
+		.then((data) => {
+			displayProjects(data);
+		})
+		.catch((error) => {
+			console.error('Failed to fetch projects:', error);
+		});
+    
+    function displayProjects(projects) {
+    const container = document.getElementById('github-projects');
+
+    projects.forEach((project) => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'mdc-card';
+
+        const projectHeader = document.createElement('div');
+        projectHeader.className = 'mdc-card__primary-action';
+        const projectName = document.createElement('h4');
+        projectName.className = 'mdc-typography--headline5';
+        projectName.innerHTML = `<br><strong>Name:</strong> ${project.name}`;
+        projectHeader.appendChild(projectName);
+        projectCard.appendChild(projectHeader);
+
+        const projectBody = document.createElement('div');
+        projectBody.className = 'mdc-card__content';
+        
+        const projectDescription = document.createElement('p');
+        projectDescription.className = 'mdc-typography--body1';
+        projectDescription.innerHTML = `<br><strong>Description:</strong> ${project.description || 'No description available'}`;
+        projectBody.appendChild(projectDescription);
+
+        if (project.language) {
+            const projectLanguage = document.createElement('p');
+            projectLanguage.className = 'mdc-typography--subtitle1';
+            projectLanguage.innerHTML = `<br><strong>Language:</strong> ${project.language}`;
+            projectBody.appendChild(projectLanguage);
+        }
+
+        projectCard.appendChild(projectBody);
+
+        const projectActions = document.createElement('div');
+        projectActions.className = 'mdc-card__actions';
+        const projectLink = document.createElement('a');
+        projectLink.href = project.html_url;
+        projectLink.className = 'mdc-button mdc-card__action mdc-card__action--button';
+        projectLink.textContent = 'View on GitHub';
+        projectLink.target = '_blank';
+        projectActions.appendChild(projectLink);
+        projectCard.appendChild(projectActions);
+
+        container.appendChild(projectCard);
+    });
+}
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Design 3 Homepage</title>
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Round">
+    <link rel="stylesheet" href="https://unpkg.com/@material/mwc-button@0.28.0/dist/mwc-button.min.css">
+    <script src="https://unpkg.com/@material/mwc-button@0.28.0/dist/mwc-button.min.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6200ee;
+            --secondary-color: #03dac6;
+            --background-color: #f5f5f5;
+            --text-color: #202124;
+            --surface-color: #ffffff;
+            --on-primary: #ffffff;
+            --on-secondary: #000000;
+            --on-background: #000000;
+            --on-surface: #000000;
+            --border-radius: 4px;
+            --elevation-1: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--on-primary);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav li {
+            margin-left: 1rem;
+        }
+
+		nav a {
+    		color: var(--on-primary);
+    		text-decoration: none;
+    		padding: 8px 16px;
+    		border-radius: var(--border-radius);
+    		transition: background-color 0.3s;
+		}
+
+		nav a:hover {
+    		background-color: rgba(255, 255, 255, 0.1);
+		}
+
+        .title {
+            font-size: 1.5rem;
+            text-align: center;
+            color: var(--on-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Hero */
+        .hero {
+            background-color: var(--surface-color);
+            color: var(--on-surface);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 2rem 0;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            color: var(--on-surface);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            box-shadow: var(--elevation-1);
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: var(--elevation-1), 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--surface-color);
+            color: var(--on-surface);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Test Portfolio site</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to My Material Design 3 Testpage</h2>
+                <p>Discover our amazing services and get to know our team.</p>
+            </div>
+               </section>
+        <section class="section">
+            <div class="container">
+                <h3 class="section-heading">My GitHub Projects</h3>
+        		<div id="github-projects" class="section-grid">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            &copy; 2023 My Website. All Rights Reserved.
+        </div>
+    </footer>
+<script>
+	const username = 'blast752'; // Replace with your GitHub username
+	const url = `https://api.github.com/users/${username}/repos`;
+
+	fetch(url)
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+			return response.json();
+		})
+		.then((data) => {
+			displayProjects(data);
+		})
+		.catch((error) => {
+			console.error('Failed to fetch projects:', error);
+		});
+
+        function displayProjects(projects) {
+    const container = document.getElementById('github-projects');
+
+    projects.forEach((project) => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'card';
+
+        const projectName = document.createElement('h4');
+        projectName.innerHTML = `<strong>Title:</strong> ${project.name}`;
+
+        const projectDescription = document.createElement('p');
+        projectDescription.innerHTML = `<strong>Description:</strong> ${project.description || 'No description available'}`;
+
+        if (project.language) {
+            const projectLanguage = document.createElement('p');
+            projectLanguage.innerHTML = `<strong>Language:</strong> ${project.language}`;
+            projectDescription.appendChild(projectLanguage);
+        }
+
+        const projectLink = document.createElement('mwc-button');
+        projectLink.label = 'View on GitHub';
+        projectLink.raised = true;
+        projectLink.trailingIcon = true;
+        projectLink.icon = 'launch';
+        projectLink.href = project.html_url;
+        projectLink.target = '_blank';
+
+        projectCard.appendChild(projectName);
+        projectCard.appendChild(projectDescription);
+        projectCard.appendChild(projectLink);
+        container.appendChild(projectCard);
+    });
+}
+</script>
+</body>
+</body>
+</html>

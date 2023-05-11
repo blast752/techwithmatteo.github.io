@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Material Design 3 Homepage</title>
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Round">
+    <link rel="stylesheet" href="https://unpkg.com/@material/mwc-button@0.28.0/dist/mwc-button.min.css">
+    <script src="https://unpkg.com/@material/mwc-button@0.28.0/dist/mwc-button.min.js" type="module"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -64,6 +68,18 @@
         nav li {
             margin-left: 1rem;
         }
+
+		nav a {
+    		color: var(--on-primary);
+    		text-decoration: none;
+    		padding: 8px 16px;
+    		border-radius: var(--border-radius);
+    		transition: background-color 0.3s;
+		}
+
+		nav a:hover {
+    		background-color: rgba(255, 255, 255, 0.1);
+		}
 
         .title {
             font-size: 1.5rem;
@@ -127,12 +143,12 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="title">My Website</h1>
+            <h1 class="title">Test Portfolio site</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
@@ -141,26 +157,14 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h2>Welcome to My Material Design 3 Homepage</h2>
+                <h2>Welcome to My Material Design 3 Testpage</h2>
                 <p>Discover our amazing services and get to know our team.</p>
             </div>
                </section>
         <section class="section">
             <div class="container">
-                <h3 class="section-heading">Our Services</h3>
-                <div class="section-grid">
-                    <div class="card">
-                        <h4>Service 1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ullam.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Service 2</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ullam.</p>
-                    </div>
-                    <div class="card">
-                        <h4>Service 3</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, ullam.</p>
-                    </div>
+                <h3 class="section-heading">My GitHub Projects</h3>
+        		<div id="github-projects" class="section-grid">
                 </div>
             </div>
         </section>
@@ -170,5 +174,62 @@
             &copy; 2023 My Website. All Rights Reserved.
         </div>
     </footer>
+<script>
+	const username = 'blast752'; // Replace with your GitHub username
+	const url = `https://api.github.com/users/${username}/repos`;
+
+	fetch(url)
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+			return response.json();
+		})
+		.then((data) => {
+			displayProjects(data);
+		})
+		.catch((error) => {
+			console.error('Failed to fetch projects:', error);
+		});
+
+        function displayProjects(projects) {
+    const container = document.getElementById('github-projects');
+
+    projects.forEach((project) => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'card';
+
+        const projectName = document.createElement('h4');
+        projectName.innerHTML = `<strong>Title:</strong> ${project.name}`;
+
+        const projectDescription = document.createElement('p');
+        projectDescription.innerHTML = `<strong>Description:</strong> ${project.description || 'No description available'}`;
+
+        if (project.language) {
+        const projectLanguage = document.createElement('p');
+        projectLanguage.innerHTML = `<strong>Language:</strong> ${project.language}`;
+        projectDescription.appendChild(projectLanguage);
+        }
+
+        const projectLink = document.createElement('a');
+        projectLink.innerHTML = 'View on GitHub<i class="material-icons right">launch</i>';
+        projectLink.className = 'btn';
+        projectLink.style.padding = '8px 16px';
+        projectLink.style.borderRadius = 'var(--border-radius)';
+        projectLink.style.transition = 'background-color 0.3s';
+        projectLink.style.textDecoration = 'none';
+        projectLink.style.color = 'var(--on-primary)';
+        projectLink.style.backgroundColor = 'var(--primary-color)';
+        projectLink.href = project.html_url;
+        projectLink.target = '_blank';
+
+        projectCard.appendChild(projectName);
+        projectCard.appendChild(projectDescription);
+        projectCard.appendChild(projectLink);
+        container.appendChild(projectCard);
+    });
+}
+</script>
+</body>
 </body>
 </html>
